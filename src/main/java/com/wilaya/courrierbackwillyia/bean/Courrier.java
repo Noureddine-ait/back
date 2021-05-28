@@ -51,6 +51,13 @@ public class Courrier {
     @OneToMany(mappedBy = "courrier")
     private List<TraitementCourrier> traitementCourriers = new ArrayList<TraitementCourrier>();
 
+
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany(mappedBy = "courrier")
+    private List<CourrierEntiteAdmin> courriersEntiteAdmins = new ArrayList<CourrierEntiteAdmin>();
+
+
     public List<ConsigneCourrier> getConsigneCourriers() {
         return consigneCourriers;
     }

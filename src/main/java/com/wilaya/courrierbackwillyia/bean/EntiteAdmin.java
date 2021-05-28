@@ -1,6 +1,10 @@
 package com.wilaya.courrierbackwillyia.bean;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class EntiteAdmin {
@@ -15,6 +19,11 @@ public class EntiteAdmin {
     private CategorieEntiteAdmin categorieEntiteAdmin;
     @ManyToOne
     private EntiteAdmin entiteAdminSuperieur;
+
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany(mappedBy = "entiteAdmin")
+    private List<CourrierEntiteAdmin> courriersEntiteAdmins = new ArrayList<CourrierEntiteAdmin>();
 
 
     public Long getId() {
