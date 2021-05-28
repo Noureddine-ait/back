@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EntiteAdminDao  extends JpaRepository<EntiteAdmin, Long> {
 
+
     EntiteAdmin findByCode(String code);
     public int deleteByCode(String code);
 }
