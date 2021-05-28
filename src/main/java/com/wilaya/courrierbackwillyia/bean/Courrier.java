@@ -151,9 +151,12 @@ public class Courrier {
         return Objet;
     }
 
+
+
     public void setObjet(String objet) {
         Objet = objet;
     }
+
 
     public SousTheme getSousTheme() {
         return sousTheme;
